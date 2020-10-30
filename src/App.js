@@ -1,11 +1,13 @@
 import React, { Component } from 'react'
 import { CardsList } from './components/CardsList'
 import { SearchBox } from './components/SearchBox'
+import logo from './Assets/MedScan.png'
+// import { ReactComponent as Logo } from './Assets/MED.svg'
 
 export class App extends Component {
 
   state={
-    pros:['Pro1', 'Pro2', 'Pro3'],
+    pros:['Pro1', 'Pro2', 'Pro3','Pro1', 'Pro2', 'Pro3', 'Pro1', 'Pro2', 'Pro3','Pro1', 'Pro2', 'Pro3', ],
     cons:['Cons1', 'Cons2', 'Cons3'],
     facts:['Facts1', 'Facts2', 'Facts3'],
   }
@@ -16,6 +18,8 @@ export class App extends Component {
   render() {
     return (
       <div className="App">
+        <img src={logo} class="medLogo" alt="MedScan" width="15%"/>
+        {/* <Logo/> */}
         <SearchBox placeHolder="Search for a medicine" handleFuntion={this.handleMedSearch}/>
         <br/>
         <CardsList cardContents={{...this.state}} handleMedSearch={this.handleMedSearch} />

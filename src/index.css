@@ -8,10 +8,68 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.search {
+/* .search {
   position: absolute;
   float: right;
   background-color: #333;
   color: #ddd;
   border: 3px ridge dashed #555;
+} */
+
+.card-container {
+  display: flex;
+  margin: 10%;
+  flex-direction: column;
+  background-color:#67d89b;
+  filter: opacity(0.85);
+  padding: 10px;
+  cursor: pointer;
+  -moz-osx-font-smoothing: grayscale;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+  transition: transform 0.25 ease-out;
+  color: #094643;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+}
+
+.card-container:hover {
+  background-color: #67d89b;
+  filter: blur(0);
+  border: 3px solid rgba(117, 245, 59, 0.856);
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.card-list {
+  width: 85vw;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 20px;
+}
+
+.search {
+  padding: 10px;
+  width: 350px;
+  line-height: 30px;
+  background-color: #ccc;
+  max-width: 400px;
+  margin: 30px auto;
+  margin-left: 41%;
+  margin-bottom: 30px;
+  text-align: center;
+  font-size: large;
+}
+/* 
+.search:hover {
+  border: 2px solid rgb(16, 240, 16);
+
+} */
+
+.medLogo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
 }
