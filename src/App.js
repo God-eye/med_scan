@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import { CardsList } from './components/CardsList'
 import { SearchBox } from './components/SearchBox'
 import logo from './Assets/MedScan.png'
+import NavBar from './components/NavBar'
+
 // import { ReactComponent as Logo } from './Assets/MED.svg'
 
 export class App extends Component {
@@ -18,10 +20,10 @@ export class App extends Component {
   render() {
     return (
       <div className="App">
+        <NavBar/>
         <img src={logo} class="medLogo" alt="MedScan" width="15%"/>
         {/* <Logo/> */}
         <SearchBox placeHolder="Search for a medicine" handleFuntion={this.handleMedSearch}/>
-        <br/>
         <CardsList cardContents={{...this.state}} handleMedSearch={this.handleMedSearch} />
       </div>
     )
