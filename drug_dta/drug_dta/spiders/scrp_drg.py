@@ -18,5 +18,9 @@ class Scrp_drg(scrapy.Spider):
 
         for initials in response.css('.alpha-list a::attr(href)').extract():
             next_page = response.urljoin(initials)
-            # print('*'*40,'\n',next_page)
-            yield  scrapy.Request(next_page, callback=self.parse) 
+            yield  scrapy.Request(next_page, callback=self.sub_pg) 
+
+    def sub_pg(self, response):
+        for sub_pg in response.css('div.paging-list-wrap:nth-child(3) > ul:nth-child(1) a::attr(href)').extract():
+            fnl_page = response.urljoin(sub_pg)
+            yield scrapy.Request(fnl_page, callback=self.parse)
